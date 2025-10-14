@@ -8,4 +8,5 @@ Hari ini, kamis 16 oktomber 2025, saya belajar:<ol>
 <li>Membuat struktur from untuk section contact</li>
 <li>Membuat styling untuk selector ID #about</li>
 <li>Membuat styling untuk selector ID #about elemen h2</li>
+<li>Membuat styling untuk selector ID #about elemen p</li>
 <ol>
