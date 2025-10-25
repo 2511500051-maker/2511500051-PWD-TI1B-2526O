@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Judul Halaman</title>
+    <style>
+        #about {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2 {
+            color: #10a37e;
+            border-bottom: 2px solid #0a8aad;
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        #about p {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            margin: 0;
+            padding: 6px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        #about strong {
+            min-width: 180px;
+            color: #006661;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 16px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+          #about p {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          #about strong {
+            text-align: left;
+            padding-right: 0;
+            margin-bottom: 2px;
+          }
+        }
+
+        #contact {
+            background-color: #f4f8fb;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+
+        #contact h2 {
+            color: #008071;
+            border-bottom: 2px dashed #0999b5;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+         }
+
+        #contact label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333333;
+         }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+         }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            border-color: #005580;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 85, 128, 0.3);
+         }
+
+        #contact button {
+            padding: 10px 18px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #005580;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+         }
+
+        #contact button:hover {
+            background-color: #003d59;
+         }
+
+        @media (max-width: 600px) {
+          #contact {
+            padding: 16px;
+        }
+
+         #contact h2 {
+            font-size: 20px;
+        }
+
+        #contact .cancel-btn {
+            background-color: #cc0000; /* merah */
+            color: white;
+        }
+
+            #contact .cancel-btn:hover {
+            background-color: #990000; /* merah lebih gelap saat hover */
+        }
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+            margin-right: 0;
+          }
+     }
+    </style>
+</head>
+<body>
+    <header></header>
+    <h1>Ini Header</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+     <section id+"home">
+        <h2>Selamat Datang</h2>
+        <p>Ini contoh Paragraf HTML</p>
+     </section>
+     <section id="about">
+  <h2>Tentang Saya</h2>
+  <section id="about">
+  <p>
+    <strong>Nama:</strong> Cintia Divanti Agustin (NIM: 2511500051)
+  </p>
+  <p>
+    <strong>Tempat, Tanggal Lahir:</strong> SUMBER JAYAPERMAI, 05 Maret 2007
+  </p>
+  <p>
+    <strong>Status:</strong> Mahasiswa Baru.
+  </p>
+  <p>
+    <strong>Hobi:</strong> mempelajari hal-hal baru tentang teknologi dan semua hal
+  </p>
+  <p>
+    <strong>Ayah:</strong> Agus Salim
+  </p>
+  <p>
+    <strong>Ibu:</strong> Puji Sulistiowati
+  </p>
+  <p>
+    <strong>Saudara:</strong> Revana Fernanda Mariska (kakak perempuan) dan Athallah Rafasya Bagasditya (adik laki-laki)
+  </p>
+  <p>
+    <strong>Motto Hidup:</strong> jangan pernah menjadi pelangi untuk orang yang suka hitam
+    </p>
+  <p>
+    <strong>Pasangan:</strong> sedang diusahakan
+  </p>
+</section>
+</section>
+    <section id="contact">
+  <h2>Kontak Kami</h2>
+  <form action="" method="GET">
+    <label for="txtNama">Nama:</label>
+    <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+
+    <label for="txtEmail">Email:</label>
+    <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+
+    <label for="txtPesan">Pesan:</label>
+    <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+
+    <button type="submit">Kirim</button>
+    <button type="reset">Batal</button>
+    <button type="button" class="cancel-btn">Batal</button>
+  </form>
+</section>
+        <h2></h2>
+        <p>&copy; 2025 Cintia Divanti Agustin [2511500051]</p>
+    </section>
+    <section>
+        <h2></h2>
+        <p></p>
+    </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
