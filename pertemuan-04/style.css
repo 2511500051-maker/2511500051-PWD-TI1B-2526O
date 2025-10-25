@@ -105,27 +105,3 @@
         #contact button:hover {
             background-color: #003d59;
          }
-          @media (max-width: 600px) {
-          #contact {
-            padding: 16px;
-        }
-
-         #contact h2 {
-            font-size: 20px;
-        }
-
-        #contact .cancel-btn {
-            background-color: #cc0000; /* merah */
-            color: white;
-        }
-
-            #contact .cancel-btn:hover {
-            background-color: #990000; /* merah lebih gelap saat hover */
-        }
-
-        button {
-            width: 100%;
-            margin-top: 10px;
-            margin-right: 0;
-          }
-     }
