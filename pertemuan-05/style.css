@@ -165,12 +165,20 @@ footer {
   padding: 10px;
 }
 
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+}
   header {
     padding: 16px;
     position: sticky;
     top: 0;
     z-index: 1000;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #263e56;
+    width: 100%;
+    padding: 5px 0;
   }
 
   header h1 {
