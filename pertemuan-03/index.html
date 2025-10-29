@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
     <title>Judul Halaman</title>
     <style>
         #about {
@@ -114,46 +113,64 @@
             transition: background 0.3s ease;
           }
 
-        #contact button {
-            padding: 10px 18px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 6px;
-            background-color: #005580;
-            color: rgb(175, 195, 241);
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-         }
+          .btn-pink {
+            background-color: #95a0f5;
+        }
 
-        #contact button:hover {
+        .btn-pink:hover {
+            background-color: #44b6ef;
+        }
+
+        .btn-purple {
+            background-color: #6cc6d2;
+        }
+
+        .btn-purple:hover {
+            background-color: #64c9e5;
+        }
+        header {
+            background-color: #6bbcf2;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            color: #555555;
+       }
+        
+  #contact button:hover {
             background-color: #003d59;
          }
-
-        @media (max-width: 600px) {
-          #contact {
-            padding: 16px;
-        }
-
-         #contact h2 {
-            font-size: 20px;
-        }
-
-        #contact .cancel-btn {
-            background-color: #cc0000; /* merah */
-            color: white;
-        }
-
-            #contact .cancel-btn:hover {
-            background-color: #990000; /* merah lebih gelap saat hover */
-        }
 
         button {
             width: 100%;
             margin-top: 10px;
             margin-right: 0;
           }
-     }
+
     </style>
 </head>
 <body>
@@ -171,34 +188,17 @@
      <main>
 
   <section id="about">
-  <p>
-    <strong>Nama:</strong> Cintia Divanti Agustin (NIM: 2511500051)
-  </p>
-  <p>
-    <strong>Tempat, Tanggal Lahir:</strong> Sumber Jayapermai, 05 Maret 2007
-  </p>
-  <p>
-    <strong>Status:</strong> Mahasiswa Baru.
-  </p>
-  <p>
-    <strong>Hobi:</strong> mempelajari hal-hal baru tentang teknologi dan semua hal
-  </p>
-  <p>
-    <strong>Ayah:</strong> Agus Salim
-  </p>
-  <p>
-    <strong>Ibu:</strong> Puji Sulistiowati
-  </p>
-  <p>
-    <strong>Saudara:</strong> Revana Fernanda Mariska (kakak perempuan) dan Athallah Rafasya Bagasditya (adik laki-laki)
-  </p>
-  <p>
-    <strong>Motto Hidup:</strong> jangan pernah menjadi pelangi untuk orang yang suka hitam
-    </p>
-  <p>
-    <strong>Pasangan:</strong> sedang diusahakan
-  </p>
+  <p><strong>Nama:</strong> Cintia Divanti Agustin (NIM: 2511500051)</p>
+  <p><strong>Tempat, Tanggal Lahir:</strong> Sumber Jayapermai, 05 Maret 2007</p>
+  <p><strong>Status:</strong> Mahasiswa Baru</p>
+  <p><strong>Hobi:</strong> mempelajari hal-hal baru tentang teknologi dan semua hal</p>
+  <p><strong>Ayah:</strong> Agus Salim </p>
+  <p><strong>Ibu:</strong> Puji Sulistiowati</p>
+  <p><strong>Saudara:</strong> Revana Fernanda Mariska (kakak perempuan) dan Athallah Rafasya Bagasditya (adik laki-laki)</p>
+  <p><strong>Motto Hidup:</strong> jangan pernah menjadi pelangi untuk orang yang suka hitam</p>
+  <p><strong>Pasangan:</strong> sedang diusahakan</p>
 </section>
+
 </section>
     <section id="contact">
   <h2>Kontak Kami</h2>
@@ -214,17 +214,13 @@
 
     <button type="submit">Kirim</button> 
     <button type="button" class="cancel-btn">Batal</button>
+    </div>
   </form>
 </section>
-        <h2></h2>
-        <p>&copy; 2025 Cintia Divanti Agustin [2511500051]</p>
-    </section>
-    <section>
-        <h2></h2>
-        <p></p>
-    </section>
-    </main>
-    <footer>
-        <p></p>
+     </main>
     </footer>
-</body>
+        <p>&copy; 2025 Cintia Divanti Agustin [2511500051]</p>
+    <footer>
+    </body>
+
+  </html>
