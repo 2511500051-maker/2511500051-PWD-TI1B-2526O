@@ -173,6 +173,14 @@ footer {
     top: 0;
     z-index: 1000;
   }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
   nav {
     display: none;
     flex-direction: column;
