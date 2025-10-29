@@ -73,30 +73,46 @@
             font-size: 24px;
          }
 
-        #contact label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: #333333;
+         form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px
          }
 
-        #contact input,
-        #contact textarea {
-            width: 100%;
+         label {
+          font-weight: 600;
+          color:#0999b5
+         }
+
+        input, textarea {
             padding: 10px;
-            margin-bottom: 16px;
             border: 1px solid #80cff6;
             border-radius: 6px;
-            box-sizing: border-box;
             font-size: 14px;
+            width: 100%;
          }
+         
+         textarea{
+            resize: vertical;
+            min-height: 100px;
+          }
 
-        #contact input:focus,
-        #contact textarea:focus {
-            border-color: #005580;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 85, 128, 0.3);
-         }
+          .button-groub {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+          }
+
+          .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            transition: backround 0.3s ease;
+          }
 
         #contact button {
             padding: 10px 18px;
@@ -141,23 +157,19 @@
     </style>
 </head>
 <body>
-    <header></header>
-    <h1>Ini Header</h1>
-    <nav>
-        <ul>
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Ini Header</h1>
+        <nav>
+             <ul>
+                 <li><a href="#home">Beranda</a></li>
+                 <li><a href="#about">Tentang</a></li>
+                 <li><a href="#contact">Kontak</a></li>
+             </ul>
+        </nav>
     </header>
-    <main>
-     <section id="home">
-        <h2>Selamat Datang</h2>
-        <p>Ini contoh Paragraf HTML</p>
-     </section>
-     <section id="about">
-  <h2>Tentang Saya</h2>
+    
+     <main>
+
   <section id="about">
   <p>
     <strong>Nama:</strong> Cintia Divanti Agustin (NIM: 2511500051)
