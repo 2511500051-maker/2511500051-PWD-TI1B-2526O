@@ -177,8 +177,8 @@ footer {
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 8px;
+    left: 16px;
   }
 
   nav {

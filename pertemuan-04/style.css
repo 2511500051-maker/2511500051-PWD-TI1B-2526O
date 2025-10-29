@@ -150,7 +150,6 @@ header li a:active {
   transform: translateY(-1px);
 }
 
-/* Footer */
 footer {
   background: #222;
   color: #aaa;
@@ -158,7 +157,6 @@ footer {
   padding: 10px;
 }
 
-/* Responsive design */
 @media (max-width: 600px) {}
   header {
     padding: 16px;
