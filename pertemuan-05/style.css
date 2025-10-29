@@ -166,7 +166,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-}
+
   header {
     padding: 16px;
     position: sticky;
@@ -180,7 +180,7 @@ footer {
     top: 20px;
     right: 20px;
   }
-  
+
   nav {
     display: none;
     flex-direction: column;
@@ -228,3 +228,4 @@ footer {
   #contact button {
     width: 100%;
   }
+}
