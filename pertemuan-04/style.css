@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: #003366;
+  background: #5c8cbd;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -52,17 +52,16 @@ header li a:active {
 #home:target ~ header a[href="#home"],
 #about:target ~ header a[href="#about"],
 #contact:target ~ header a[href="#contact"] {
-  background: #fff;
+  background: #92a3fb;
   color: #003366;
   font-weight: bold;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-
 #home,
 #about,
 #contact {
-  background-color: #ffffff;
+  background-color: #7088e1;
   border-radius: 10px;
   padding: 20px;
   max-width: 700px;
