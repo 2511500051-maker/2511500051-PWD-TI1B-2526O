@@ -4,174 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judul Halaman</title>
-    <style>
-        #about {
-            background-color: #c1c8fd;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 700px;
-            margin: 20px auto;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #about h2 {
-            color: #10a37e;
-            border-bottom: 2px solid #0a8aad;
-            padding-bottom: 6px;
-            margin-top: 0;
-            margin-bottom: 16px;
-        }
-
-        #about p {
-            display: flex;
-            justify-content: flex-start;
-            align-items: baseline;
-            margin: 0;
-            padding: 6px 0;
-            border-bottom: 1px solid #a7d8f8;
-        }
-
-        #about strong {
-            min-width: 180px;
-            color: #006661;
-            font-weight: 600;
-            text-align: right;
-            padding-right: 16px;
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 600px) {
-          #about p {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-
-          #about strong {
-            text-align: left;
-            padding-right: 0;
-            margin-bottom: 2px;
-          }
-        }
-
-        #contact {
-            background-color: #bbdffb;
-            border-radius: 12px;
-            padding: 24px;
-            max-width: 700px;
-            margin: 40px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         }
-
-        #contact h2 {
-            color: #008071;
-            border-bottom: 2px dashed #0999b5;
-            padding-bottom: 8px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 24px;
-         }
-
-         form {
-          display: flex;
-          flex-direction: column;
-          gap: 15px
-         }
-
-         label {
-          font-weight: 600;
-          color:#0999b5
-         }
-
-        input, textarea {
-            padding: 10px;
-            border: 1px solid #80cff6;
-            border-radius: 6px;
-            font-size: 14px;
-            width: 100%;
-         }
-         
-         textarea{
-            resize: vertical;
-            min-height: 100px;
-          }
-
-          .button-groub {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 10px;
-          }
-
-          .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #fff;
-            transition: background 0.3s ease;
-          }
-
-          .btn-pink {
-            background-color: #95a0f5;
-        }
-
-        .btn-pink:hover {
-            background-color: #44b6ef;
-        }
-
-        .btn-purple {
-            background-color: #4f7ff1;
-        }
-
-        .btn-purple:hover {
-            background-color: #3b96c8;
-        }
-        header {
-            background-color: #378bec;
-            color: #75b9f9;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #42a5e2;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            color: #555555;
-       }
-        
-  #contact button:hover {
-            background-color: #003d59;
-         }
-
-        button {
-            width: 100%;
-            margin-top: 10px;
-            margin-right: 0;
-          }
-
-    </style>
+    <link rel="stylesheet"href="style.css">
 </head>
 <body>
     <header>
@@ -184,9 +17,11 @@
              </ul>
         </nav>
     </header>
-    
-     <main>
-
+    <main>
+       <section id="home">
+            <h2>Selamat Datang</h2>
+            <p>ini contoh paragraf HTML.</p>
+        </section>
   <section id="about">
   <p><strong>Nama:</strong> Cintia Divanti Agustin (NIM: 2511500051)</p>
   <p><strong>Tempat, Tanggal Lahir:</strong> Sumber Jayapermai, 05 Maret 2007</p>
