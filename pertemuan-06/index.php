@@ -47,40 +47,40 @@
   ?>
 
   <?php
-    $namaMatkul2 = "Wawasan Berbudi Luhur";
-    $sksMatkul2 = 2;
-    $nilaiHadir2 = 80;
-    $nilaiTugas2 = 75;
-    $nilaiUTS2 = 65;
-    $nilaiUAS2 = 70;
+    $namaMatkul1 = "Algoritma dan Pemrograman";
+    $sksMatkul1 = 2;
+    $nilaiHadir1 = 80;
+    $nilaiTugas1 = 75;
+    $nilaiUTS1 = 65;
+    $nilaiUAS1 = 70;
 
-    $namaMatkul3 = "Aplikasi Perkantoran";
-    $sksMatkul3 = 3;
-    $nilaiHadir3 = 80;
-    $nilaiTugas3 = 70;
+    $namaMatkul2 = "Agama";
+    $sksMatkul2 = 3;
+    $nilaiHadir2 = 80;
+    $nilaiTugas2 = 70;
+    $nilaiUTS2 = 70;
+    $nilaiUAS2 = 65;
+
+    $namaMatkul3 = "Logika Informatika";
+    $sksMatkul3 = 4;
+    $nilaiHadir3 = 90;
+    $nilaiTugas3 = 75;
     $nilaiUTS3 = 70;
-    $nilaiUAS3 = 65;
+    $nilaiUAS3 = 70;
 
     $namaMatkul4 = "Kalkulus";
-    $sksMatkul4 = 4;
-    $nilaiHadir4 = 90;
-    $nilaiTugas4 = 75;
-    $nilaiUTS4 = 70;
-    $nilaiUAS4 = 70;
+    $sksMatkul4 = 3;
+    $nilaiHadir4 = 75;
+    $nilaiTugas4 = 73;
+    $nilaiUTS4 = 65;
+    $nilaiUAS4 = 65;
 
     $namaMatkul5 = "Pemrograman Web Dasar";
-    $sksMatkul5 = 3;
-    $nilaiHadir5 = 75;
-    $nilaiTugas5 = 73;
-    $nilaiUTS5 = 65;
-    $nilaiUAS5 = 65;
-
-    $namaMatkul6 = "Logika Informatika";
-    $sksMatkul6 = 4;
-    $nilaiHadir6 = 85;
-    $nilaiTugas6 = 70;
-    $nilaiUTS6 = 70;
-    $nilaiUAS6 = 70;
+    $sksMatkul5 = 4;
+    $nilaiHadir5 = 85;
+    $nilaiTugas5 = 70;
+    $nilaiUTS5 = 70;
+    $nilaiUAS5 = 70;
 
     function hitungNilai($nama, $sks, $hadir, $tugas, $uts, $uas) {
         $nilaiAkhir = 0.0;
@@ -394,7 +394,7 @@
       <div class="row">
         <div class="label">Bobot :</div>
         <div class="value"><?php echo $hasil5['bobot']; ?></div>
-      </div>
+      </div> 
       <div class="row">
         <div class="label">Status :</div>
         <div class="value"><?php echo $hasil5['status']; ?></div>
