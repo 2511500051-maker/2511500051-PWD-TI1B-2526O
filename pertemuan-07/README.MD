@@ -9,5 +9,9 @@ Hari ini, Rabu 05 November 2025 saya belajar:<br>
     <li>copy dan rename idex.php menjadi get.php, kemudian buat file baru get_proses.php utk action</li>
     <li>isi get_proses.php</li>
     <li>session di get_proses.php</li>
+    <li>menampilkan session dari get_proses.php ke get.php</li>
+    <li>redirect dari get_proses.php ke get.php</li>
+    <li>copy paste get.php dan get_proses.php lalu rename menjadi post.php dan post_proses.php</li>
+    <li>sesuaikan get ke post</li>
     </ol>
 
