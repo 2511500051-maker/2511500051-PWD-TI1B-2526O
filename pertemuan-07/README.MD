@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # pertemuan-07
 
 NIM     : 2511500051 <br>
@@ -9,17 +8,6 @@ Hari ini, Rabu 05 November 2025 saya belajar:<br>
     <li>copy seluruh file dari elearning (punya dosen) untuk latihan pertemuan-07</li>
     <li>copy dan rename idex.php menjadi get.php, kemudian buat file baru get_proses.php utk action</li>
     <li>isi get_proses.php</li>
+    <li>session di get_proses.php</li>
     </ol>
 
-=======
-# pertemuan-07
-
-NIM : 2511500051<br>
-Nama : Cintia Divanti Agustin
-<br><br>
-
-Hari ini, Rabu 05 November 2025 belajar;<br>
-<ul>
-    <li>copy seluruh file dari elearning (punya dosen) untuk latihan pertemuan-07</li>
-</ul>
->>>>>>> b535e8fa9dfdc7f8f113e971a1a5735b8457f191
