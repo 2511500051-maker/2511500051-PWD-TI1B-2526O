@@ -91,9 +91,9 @@
         <button type="reset">Batal</button>
       </form>
       <p>Terima Kasih Sudah Menghubungi Kami:
-        <label>Nama: <strong><?php echo $sesname; ?></strong></label>
-        <label>Email: <strong><?php echo $sesemail; ?></strong></label>
-        <label>Pesan: <strong><?php echo $sespesan; ?></strong></label>
+        <label>Nama: <strong><?php echo $sesname; ?> </strong></label>
+        <label>Email: <strong><?php echo $sesemail; ?> </strong></label>
+        <label>Pesan: <strong><?php echo $sespesan; ?> </strong></label>
       </p>
     </section>
   </main>
