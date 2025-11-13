@@ -1,20 +1,56 @@
 <?php
 session_start();
 
+$sesnim = "";
+if (isset($_SESSION["nim"] = $nim));{
+  $sesnim = $_SESSION["sesnim"];
+endif;
+
 $sesnama = "";
-if (isset($_SESSION["sesnama"])):
+if (isset($_SESSION["nama"] = $nama));
   $sesnama = $_SESSION["sesnama"];
 endif;
 
-$sesemail = "";
-if (isset($_SESSION["sesemail"])):
-  $sesemail = $_SESSION["sesemail"];
+$sesnama = "";
+if (isset($_SESSION["tempat"] = $tempat));
+  $sestempat = $_SESSION["sestempat"];
 endif;
 
-$sespesan = "";
-if (isset($_SESSION["sespesan"])):
-  $sespesan = $_SESSION["sespesan"];
+$sesnama = "";
+if (isset($_SESSION["tanggal"] = $tanggal));
+  $sestempat = $_SESSION["sestempat"]
 endif;
+
+$sesnama = "";
+if (isset($_SESSION["hobi"] = $hobi));
+  $seshobi = $_SESSION["seshobi"];
+endif;
+
+$sesnama = "";
+if (isset($_SESSION["pasangan"] = $pasangan));
+  $sespasangan = $_SESSION["sespasangan"];
+endif;
+
+$sesnama = "";
+if (isset($_SESSION["pekerjaan"] = $pekerjaan));
+  $sespekerjaan = $_SESSION["sespekerjaan"];
+endif;
+
+$sesnama = "";
+if (isset($_SESSION["ortu"] = $ortu));
+  $sesortu = $_SESSION["sesortu"];
+endif;
+
+$sesnama = "";
+if (isset($_SESSION["kakak"] = $kakak));
+  $seskakak = $_SESSION["seskakak"];
+endif;
+
+$sesnama = "";
+if (isset($_SESSION["adik"] = $adik));
+  $sesadik = $_SESSION["sesadik"];
+endif;
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,25 +77,6 @@ endif;
       </ul>
     </nav>
   </header>
-
-  <from>
-    <section id="contact">
-      <h2>Kontak Kami</h2>
-      <form action="proses.php" method="POST">
-
-        <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
-        </label>
-
-        <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
-        </label>
-
-        <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
-        </label>
-
   <main>
     <section id="home">
       <h2>Selamat Datang</h2>
@@ -68,6 +85,54 @@ endif;
       echo "nama saya hadi";
       ?>
       <p>Ini contoh paragraf HTML.</p>
+    </section>
+<section id="entry">
+      <h2>Entry Data Mahasiswa</h2>
+      <form action="proses_entry.php" method="POST">
+        
+      <label for="txtNim"><span>NIM:</span>
+        <input type="text" id="txtNim" nama="txtNim" placeholder="Masukan nim" required autocomplete="nim">
+        </label>
+
+        <label for="txtNama"><span>Nama Lengkap:</span>
+        <input type="text" id="txtNama" name="txtNama"  placeholder="Masukan nama lengkap" required autocomplete="nama">
+        </label>
+
+        <label for="txtTempat"><span>Tempat Lahir:</span>
+        <input type="text" id="txtTempat" name="txtTempat" placeholder="Masukan tempat lahir" required autocomplete="tempat">
+        </label>
+
+        <label for="txtTanggal"><span>Tanggal Lahir:</span>
+        <input type="date" id="txtTanggal" name="txtTanggal" placeholder="Masukan tanggal lahir" required autocomplete="tanggal">
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+        <input type="text" id="txtHobi" name="txthobi" placeholder="Masukan Hobi" required autocomplete="hobi">
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+        <input type="text" id="txtPasangan" name="txtpasangan" placeholder="Masukan pasangan" required autocomplete="pasangan">
+        </label>
+
+        <label for="txtPekerjaan"><span>Pekerjaan:</span>
+        <input type="text" id="txtPasangan" name="txtpekerjaan" placeholder="Masukan pekerjaan" required autocomplete="pekerjaan">
+        </label>
+
+        <label for="txtNamaOrtu"><span>Nama Orang Tua:</span>
+        <input type="text" id="txtNamaOrtu" name="txtortu" placeholder="Masukan nama orang tua" required autocomplete="ortu">
+        </label>
+
+        <label for="txtNamaKakak"><span>Nama Kakak:</span>
+        <input type="text" id="txtKakak" name="txtkakak" placeholder="Masukan nama kakak" required autocomplete="namakakak">
+        </label>
+
+        <label for="txtNamaAdik"><span>Nama Adik:</span>
+        <input type="text" id="txtNamaAdik" name="txtadik" placeholder="Masukan nama adik" required autocomplete="namaadik">
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
     </section>
 
     <section id="about">
@@ -115,11 +180,6 @@ endif;
           <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
-
-
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
-      </form>
 
       <?php if (!empty($sesnama)): ?>
         <br><hr>
