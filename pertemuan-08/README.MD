@@ -6,8 +6,7 @@ NAMA: CINTIA DIVANTI AGUSTIN<br>
 Hari ini, Kamis 13 nov 2025 saya menggerjakan uts:<br>
 <ol>
 <li>copy bahan UTS PWD yang telah di extract ke dalam folder pertemuan-08</li>
-<li>Input data (NIM, Nama, Tempat/Tanggal Lahir, dll)</li>
-<li>Data ditampilkan pada section Tentang Saya</li>
-<li>Styling dan struktur HTML terpisah dengan CSS</li>
-<li>Menggunakan PHP dan session untuk pengiriman data</li>
+<li>mengubah section id</li>
+<li>menambahkan section id data mahasiswa ke index.php</li>
+<li>menambahkan session start<li>
 </ol>
