@@ -1,15 +1,13 @@
 # pertemuan-08
 
 NIM: 2511500051<br>
-Nama: CINTIA DIVANTI AGUSTIN<br>
-Kelompok: TI1B<br>
-<br><br>
-Hari ini, Kamis 13.NOV.2025, saya:<br>
-<br>
-Proses saya mengerjakan UTS ini sebagai berikut:<br>
+NAMA: CINTIA DIVANTI AGUSTIN<br>
+<br></br>
+Hari ini, Kamis 13 nov 2025 saya menggerjakan uts:<br>
 <ol>
-  <li>mengextrak file dosen index.php pertemuan 08</li>
-  <li>mengubah section id</li>
-  <li>menambahkan section id data mahasiswa</li>
-  <li>menambahkan session start index.php<li>
+<li>copy bahan UTS PWD yang telah di extract ke dalam folder pertemuan-08</li>
+<li>mengubah section id</li>
+<li>menambahkan section id data mahasiswa ke index.php</li>
+<li>menambahkan session start<li>
 </ol>
+

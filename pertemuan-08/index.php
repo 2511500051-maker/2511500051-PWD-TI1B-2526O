@@ -126,6 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <section id="about">
       <?php
+
     $NIM = "2511500051";
     $Nama_lengkap = "Cintia Divanti Agustin";
     $Tempat_lahir = "Sumber Jayapermai";
@@ -137,6 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $Nama_Kakak = "Refana fernanda mariska";
     $Nama_Adik = "Athallah rafasya bagasditya";
     ?>
+
       <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong>
         <?php
@@ -186,8 +188,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
-
-
 
     </section>
   </main>
