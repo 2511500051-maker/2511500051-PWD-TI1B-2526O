@@ -37,7 +37,7 @@ endif;
       <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
-        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#data-mahasiswa">Data</a></li>
       </ul>
     </nav>
   </header>
@@ -54,6 +54,46 @@ endif;
 
         <section id="data-mahasiswa">
   <h2>Entry Data Mahasiswa</h2>
+
+  <?php
+if (isset($_SESSION["history_mahasiswa"]) && count($_SESSION["history_mahasiswa"]) > 0):
+?>
+<section id="history-mahasiswa">
+  <h2>History Entry Data Mahasiswa</h2>
+  <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>NIM</th>
+        <th>Nama Lengkap</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Hobi</th>
+        <th>Pasangan</th>
+        <th>Pekerjaan</th>
+        <th>Nama Orang Tua</th>
+        <th>Nama Kakak</th>
+        <th>Nama Adik</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($_SESSION["history_mahasiswa"] as $entry): ?>
+        <tr>
+          <td><?= htmlspecialchars($entry["nim"]) ?></td>
+          <td><?= htmlspecialchars($entry["nama"]) ?></td>
+          <td><?= htmlspecialchars($entry["tempat_lahir"]) ?></td>
+          <td><?= htmlspecialchars($entry["tanggal_lahir"]) ?></td>
+          <td><?= htmlspecialchars($entry["hobi"]) ?></td>
+          <td><?= htmlspecialchars($entry["pasangan"]) ?></td>
+          <td><?= htmlspecialchars($entry["pekerjaan"]) ?></td>
+          <td><?= htmlspecialchars($entry["nama_ortu"]) ?></td>
+          <td><?= htmlspecialchars($entry["nama_kakak"]) ?></td>
+          <td><?= htmlspecialchars($entry["nama_adik"]) ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</section>
+<?php endif; ?>
 
   <form action="proses_entry.php" method="POST">
 
