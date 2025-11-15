@@ -107,10 +107,28 @@ endif;
         <input type="text" id="nama_adik" name="nama_adik" placeholder="Masukan nama adek" required>
       </label>
 
-      <div class="button-group">
+      <section id="contact">
+      <h2>Kontak Kami</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
-      </div>
+      </form>
+
 
   </form>
 </section>
@@ -181,28 +199,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <p><strong>Nama Orang Tua:</strong> <?php echo $Nama_Orang_Tua;?></p>
       <p><strong>Nama Kakak:</strong> <?php echo $Nama_Kakak?></p>
     </section>
-
-    <section id="contact">
-      <h2>Kontak Kami</h2>
-      <form action="proses.php" method="POST">
-
-        <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
-        </label>
-
-        <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
-        </label>
-
-        <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
-        </label>
-
-
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
-      </form>
 
       <?php if (!empty($sesnama)): ?>
         <br><hr>
