@@ -104,13 +104,6 @@ $kontak = [
 <p>Adik: Athallah Rafasya Bagasditya</p>
 </section>
 
-<section id="kontak">
-<h2>Kontak</h2>
-<?php if (!empty($kontak["nama"])): ?>
-<p>Nama: <?= $kontak["nama"] ?></p>
-<p>Email: <?= $kontak["email"] ?></p>
-<p>Pesan: <?= $kontak["pesan"] ?></p>
-<?php else: ?>
 <section id="contact">
       <h2>Kontak Kami</h2>
       <form action="" method="GET">
