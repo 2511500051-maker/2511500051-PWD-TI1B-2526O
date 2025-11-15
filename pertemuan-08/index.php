@@ -52,45 +52,68 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <section id="Data_mahasiswa">
-      <h2>Entry Data Mahasiswa</h2>
-      <form action="proses_entry.php" method="POST">
-        <label for="nim">NIM:</label>
+        <section id="data-mahasiswa">
+  <h2>Entry Data Mahasiswa</h2>
+
+  <form action="proses_entry.php" method="POST">
+
+      <label for="nim">
+        <span>NIM:</span>
         <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required>
+      </label>
 
-        <label for="nama">Nama Lengkap:</label>
+      <label for="nama">
+        <span>Nama Lengkap:</span>
         <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+      </label>
 
-        <label for="tempat_lahir">Tempat Lahir:</label>
+      <label for="tempat_lahir">
+        <span>Tempat Lahir:</span>
         <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+      </label>
 
-        <label for="tanggal_lahir">Tanggal Lahir:</label>
+      <label for="tanggal_lahir">
+        <span>Tanggal Lahir:</span>
         <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+      </label>
 
-        <label for="hobi">Hobi:</label>
+      <label for="hobi">
+        <span>Hobi:</span>
         <input type="text" id="hobi" name="hobi">
+      </label>
 
-        <label for="pasangan">Pasangan:</label>
+      <label for="pasangan">
+        <span>Pasangan:</span>
         <input type="text" id="pasangan" name="pasangan">
+      </label>
 
-        <label for="pekerjaan">Pekerjaan:</label>
+      <label for="pekerjaan">
+        <span>Pekerjaan:</span>
         <input type="text" id="pekerjaan" name="pekerjaan">
+      </label>
 
-        <label for="nama_ortu">Nama Orang Tua:</label>
+      <label for="nama_ortu">
+        <span>Nama Orang Tua:</span>
         <input type="text" id="nama_ortu" name="nama_ortu">
+      </label>
 
-        <label for="nama_kakak">Nama Kakak:</label>
+      <label for="nama_kakak">
+        <span>Nama Kakak:</span>
         <input type="text" id="nama_kakak" name="nama_kakak">
+      </label>
 
-        <label for="nama_adik">Nama Adik:</label>
+      <label for="nama_adik">
+        <span>Nama Adik:</span>
         <input type="text" id="nama_adik" name="nama_adik">
+      </label>
 
-        <div class="button-group">
-          <button type="submit">Kirim</button>
-          <button type="reset">Batal</button>
-        </div>
-      </form>
-    </section>
+      <div class="button-group">
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </div>
+
+  </form>
+</section>
 
     <?php
 if (session_status() === PHP_SESSION_NONE) {
