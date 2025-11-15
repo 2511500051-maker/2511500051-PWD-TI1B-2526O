@@ -233,3 +233,47 @@ footer {
     width: 100%;
   }
 }
+
+
+#data-mahasiswa form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#data-mahasiswa label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #003366;
+}
+
+#data-mahasiswa input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#data-mahasiswa button {
+  margin-top: 10px;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#data-mahasiswa button[type="submit"] {
+  background: #003366;
+  color: white;
+}
+
+#data-mahasiswa button[type="reset"] {
+  background: #ccc;
+}
+
+#data-mahasiswa button:hover {
+  opacity: 0.85;
+}
