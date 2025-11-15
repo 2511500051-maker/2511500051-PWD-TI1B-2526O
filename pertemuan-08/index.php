@@ -69,42 +69,42 @@ endif;
 
       <label for="tempat_lahir">
         <span>Tempat Lahir:</span>
-        <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+        <input type="text" id="tempat_lahir"  name="tempat_lahir" placeholder ="Masukan tempat lahir" required>
       </label>
 
       <label for="tanggal_lahir">
         <span>Tanggal Lahir:</span>
-        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukan tanggal lahir" required>
       </label>
 
       <label for="hobi">
         <span>Hobi:</span>
-        <input type="text" id="hobi" name="hobi">
+        <input type="text" id="hobi" name="hobi" placeholder="Masukan hobi" required>
       </label>
 
       <label for="pasangan">
         <span>Pasangan:</span>
-        <input type="text" id="pasangan" name="pasangan">
+        <input type="text" id="pasangan" name="pasangan" placeholder="Masukan pasangan kalo ada" required>
       </label>
 
       <label for="pekerjaan">
         <span>Pekerjaan:</span>
-        <input type="text" id="pekerjaan" name="pekerjaan">
+        <input type="text" id="pekerjaan" name="pekerjaan" placeholder="Masukan pekerjaan jika bkn pengangguran" required>
       </label>
 
       <label for="nama_ortu">
         <span>Nama Orang Tua:</span>
-        <input type="text" id="nama_ortu" name="nama_ortu">
+        <input type="text" id="nama_ortu" name="nama_ortu" placeholder="Masukan nama orang tua" required>
       </label>
 
       <label for="nama_kakak">
         <span>Nama Kakak:</span>
-        <input type="text" id="nama_kakak" name="nama_kakak">
+        <input type="text" id="nama_kakak" name="nama_kakak" placeholder="Masukan nama kakak" required>
       </label>
 
       <label for="nama_adik">
         <span>Nama Adik:</span>
-        <input type="text" id="nama_adik" name="nama_adik">
+        <input type="text" id="nama_adik" name="nama_adik" placeholder="Masukan nama adek" required>
       </label>
 
       <div class="button-group">
