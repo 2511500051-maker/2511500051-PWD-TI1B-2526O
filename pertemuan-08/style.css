@@ -235,45 +235,79 @@ footer {
 }
 
 
+#data-mahasiswa {
+  background-color: #7088e1;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#data-mahasiswa h2 {
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+}
+
 #data-mahasiswa form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px; 
 }
 
 #data-mahasiswa label {
   display: flex;
   flex-direction: column;
-  font-weight: 600;
+  font-weight: bold;
   color: #003366;
 }
 
 #data-mahasiswa input {
   padding: 8px;
+  margin-top: 4px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
 
 #data-mahasiswa button {
-  margin-top: 10px;
   width: fit-content;
   padding: 10px 20px;
+  margin-top: 10px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 #data-mahasiswa button[type="submit"] {
   background: #003366;
-  color: white;
+  color: #fff;
+}
+
+#data-mahasiswa button[type="submit"]:hover {
+  background: #0379ee;
 }
 
 #data-mahasiswa button[type="reset"] {
   background: #ccc;
 }
 
-#data-mahasiswa button:hover {
-  opacity: 0.85;
+#data-mahasiswa button[type="reset"]:hover {
+  background: #bbb;
+}
+
+
+@media (max-width: 600px) {
+  #data-mahasiswa form {
+    gap: 12px;
+  }
+
+  #data-mahasiswa button {
+    width: 100%;
+  }
 }
