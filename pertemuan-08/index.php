@@ -111,16 +111,29 @@ $kontak = [
 <p>Email: <?= $kontak["email"] ?></p>
 <p>Pesan: <?= $kontak["pesan"] ?></p>
 <?php else: ?>
-<form action="proses_kontak.php" method="POST">
-<label>Nama: <input type="text" name="nama" required></label>
-<label>Email: <input type="email" name="email" required></label>
-<label>Pesan: <textarea name="pesan" required></textarea></label>
-<button type="submit">Kirim</button>
-</form>
-<?php endif; ?>
-</section>
+<section id="contact">
+      <h2>Kontak Kami</h2>
+      <form action="" method="GET">
 
-</main>
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+    </section>
+  </main>
 
 <footer>
 <p>&copy; 2025 Cintia Divanti Agustin</p>
