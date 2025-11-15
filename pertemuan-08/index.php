@@ -27,7 +27,7 @@ $kontak = [
 <li><a href="#home">Beranda</a></li>
 <li><a href="#data-mahasiswa">Data Mahasiswa</a></li>
 <li><a href="#about">Tentang</a></li>
-<li><a href="#kontak">Kontak</a></li>
+<li><a href="#contact">Kontak</a></li>
 </ul>
 </nav>
 </header>
@@ -72,7 +72,7 @@ $kontak = [
 </table>
 <?php endif; ?>
 
-<!-- Form Entry Mahasiswa -->
+
 <form action="proses_entry.php" method="POST">
 <label>NIM: <input type="text" name="nim" required></label>
 <label>Nama: <input type="text" name="nama" required></label>
