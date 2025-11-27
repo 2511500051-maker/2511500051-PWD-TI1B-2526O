@@ -65,6 +65,13 @@ $txtNmAdik = "";
 if (isset($_SESSION["txtNmAdik"])):
   $txtNmAdik = $_SESSION["txtNmAdik"];
 endif;
+
+foreach ($dataBiodata as $k => $v) {
+echo "<p><strong>$k</strong>: $v</p>";
+}
+
+$_SESSION["biodata"] = $arrBiodata;
+header("location: index.php#about");
 ?>
 
 <!DOCTYPE html>
