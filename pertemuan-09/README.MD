@@ -8,3 +8,4 @@ Hari ini, Kamis 27 nov 2025 saya belajar:<br>
 <li>mengektrak zib dari elearning ke vscode pertemuan-09</li>
 <li>mengubah session (txtnama) menjadi session arrbiodata</li>
 <li>menambahkan fieldConfig</li>
+<li>menambahkan kata di id #about</li>
