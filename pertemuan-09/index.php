@@ -126,17 +126,6 @@ $fieldConfig = [
         <?= $metadata["suffix"] ?>
     </p>
   <?php endforeach; ?>
-
-      <p><strong>NIM:</strong> <?= $txtNim ?></p>
-      <p><strong>Nama Lengkap:</strong> <?= $txtNmLengkap ?></p>
-      <p><strong>Tempat Lahir:</strong> <?= $txtT4Lhr ?></p>
-      <p><strong>Tanggal Lahir:</strong> <?= $txtTglLhr ?></p>
-      <p><strong>Hobi:</strong> <?= $txtHobi ?></p>
-      <p><strong>Pasangan:</strong> <?= $txtPasangan ?></p>
-      <p><strong>Pekerjaan:</strong> <?= $txtKerja ?></p>
-      <p><strong>Nama Orang Tua:</strong> <?= $txtNmOrtu ?></p>
-      <p><strong>Nama Kakak:</strong> <?= $txtNmKakak ?></p>
-      <p><strong>Nama Adik:</strong> <?= $txtNmAdik ?></p>
     </section>
 
     <section id="contact">
