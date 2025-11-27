@@ -10,3 +10,4 @@ Hari ini, Kamis 27 nov 2025 saya belajar:<br>
 <li>menambahkan fieldConfig</li>
 <li>menambahkan kata di id #about</li>
 <li>membuat file fungsi.php</li>
+</ol>
