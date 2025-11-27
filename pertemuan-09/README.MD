@@ -6,4 +6,5 @@ NAMA: CINTIA DIVANTI AGUSTIN<br>
 Hari ini, Kamis 27 nov 2025 saya belajar:<br>
 <ol>
 <li>mengektrak zib dari elearning ke vscode pertemuan-09</li>
-<li>menggubah session (txtnama) menjadi session arrbiodata</li>
+<li>mengubah session (txtnama) menjadi session arrbiodata</li>
+<li>menambahkan fieldConfig</li>
