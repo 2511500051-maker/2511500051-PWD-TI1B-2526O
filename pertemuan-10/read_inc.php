@@ -16,28 +16,12 @@ if (!$q) {
 } else {
     while ($row = mysqli_fetch_assoc($q)) {
         $arrKontak = [
-            "nama" => $_POST["txtNama"] ?? "",
-            "email" => $_POST["txtEmail"] ?? "",
-            "pesan" => $_POST["txtPesan"] ?? "",
+            "nama" => $row["cnama"] ?? "",
+            "email" => $row["cemail"] ?? "",
+            "pesan" => $row["cpesan"] ?? "",
         ];
-        echo tampilkanBiodata($fieldConfigKontak, $kontak);
+        echo tampilkanBiodata($fieldConfigKontak, $arrKontak);
     }
 }
+$q = mysqli_query($koneksi, $sql);
 ?>
-<table border="1" cellpadding="8" cellspacing="0">
-    <tr>
-        <th>ID</th>
-        <th>Nama</th>
-        <th>Email</th>
-        <th>Pesan</th>
-    </tr>
-
-    <?php while ($row = mysqli_fetch_assoc($q)): ?>
-        <tr>
-            <td><?= $row['cid']; ?></td>
-            <td><?= htmlspecialchars($row['cnama']); ?></td>
-            <td><?= htmlspecialchars($row['cemail']); ?></td>
-            <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>
-        </tr>
-    <?php endwhile; ?>
-</table>
