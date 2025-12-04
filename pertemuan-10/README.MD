@@ -11,3 +11,4 @@ Hari ini, Kamis 04 Des 2025 saya belajar:<br>
 <li>menambah tbl_tamu</li>
 <li>menambah file read.php</li>
 <li>menambah data di tab insert</li>
+<li>menambahkan $fieldconfiqkontak</li>
