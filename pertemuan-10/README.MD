@@ -13,3 +13,4 @@ Hari ini, Kamis 04 Des 2025 saya belajar:<br>
 <li>menambah data di tab insert</li>
 <li>menambahkan $fieldconfiqkontak</li>
 <li>mengubah tampilkanBiodata menjadi read_inc.php</li>
+</ol>
