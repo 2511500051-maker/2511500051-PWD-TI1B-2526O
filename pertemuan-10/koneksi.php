@@ -6,7 +6,7 @@ $db   = "db_pwd2025" ;
 
 $koneksi = mysqli_connect($host, $user, $pass, $db) ;
 
-if (!$conn) {
+if (!$koneksi) {
     die ("Koneksi gagal : " . mysqli_connect_error());
 }   
 ?>

@@ -1,8 +1,8 @@
 <?php
-require_once "koneksi.php" ;
+require 'koneksi.php';
 
-$sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC" ;
-$q = mysqli_query ($conn, $sql) ;
+$sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
+$q = mysqli_query ($koneksi, $sql);
 ?>
 <table border="1" cellpadding="8" cellspacing="0">
     <tr>
@@ -11,12 +11,13 @@ $q = mysqli_query ($conn, $sql) ;
         <th>Email</th>
         <th>Pesan</th>
     </tr>
-    <?php while ($r = mysqli_fetch_assoc ($q)): ?>
+
+    <?php while ($row = mysqli_fetch_assoc ($q)): ?>
     <tr>
         <td><?= $row['cid']; ?></td>
         <td><?= htmlspecialchars($row['cnama']); ?></td>
         <td><?= htmlspecialchars($row['cemail']); ?></td>
-        <td><?= htmlspecialchars($row['cpesan']); ?></td>
+        <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>
     </tr>
     <?php endwhile; ?>
 </table>
