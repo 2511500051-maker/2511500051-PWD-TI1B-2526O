@@ -8,3 +8,4 @@ Hari ini, Kamis 04 Des 2025 saya belajar:<br>
 <li>mengektrak zib pertemuan-10</li>
 <li>menambah koneksi.php</li>
 <li>membuat dp_pwd2025</li>
+<li>menambah tbl_tamu</li>
