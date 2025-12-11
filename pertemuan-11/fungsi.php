@@ -1,5 +1,5 @@
 <?php
-function reditect_ke($url)
+function redirect_ke($url)
 {
   header("Location: " . $url);
   exit();
