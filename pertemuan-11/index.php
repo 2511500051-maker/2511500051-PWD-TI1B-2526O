@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once __DIR__ . '/fungsi.php';
+$a = rand(1, 9);
+$b = rand(1, 9);
+
+// simpan jawabannya di session
+$_SESSION['captcha_result'] = $a + $b;
+
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +88,13 @@ require_once __DIR__ . '/fungsi.php';
           <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
         </label>
 
+        <label for="txtCaptcha">
+          <span>Captcha (2 + 3 = ?):</span>
+          <input type="text" id="txtCaptcha" name="txtCaptcha" placeholder="Jawabannya?" required>
+        </label>
+
+
+
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
@@ -131,26 +144,32 @@ require_once __DIR__ . '/fungsi.php';
           <?= $flash_error; ?>
         </div>
       <?php endif; ?>
-      
+
       <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama"
-          required autocomplete="name"
-          value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
+            required autocomplete="name"
+            value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
         </label>
 
         <label for="txtEmail"><span>Email:</span>
           <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email"
-           required autocomplete="email"
-           value="<?= isset($old['email']) ? htmlspecialchars($old['email']) : '' ?>">
+            required autocomplete="email"
+            value="<?= isset($old['email']) ? htmlspecialchars($old['email']) : '' ?>">
         </label>
 
         <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." 
-          required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
+            required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
+
+        <label for="txtCaptcha">
+          <span>Captcha (<?= $a ?> + <?= $b ?> = ?):</span>
+          <input type="text" id="txtCaptcha" name="txtCaptcha" placeholder="Jawabannya?" required>
+        </label>
+
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
