@@ -148,7 +148,7 @@ require_once __DIR__ . '/fungsi.php';
 
         <label for="txtPesan"><span>Pesan Anda:</span>
           <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." 
-          required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?>"</textarea>
+          required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
 
