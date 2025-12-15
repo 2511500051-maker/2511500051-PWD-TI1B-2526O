@@ -46,12 +46,6 @@ if (!empty($errors)) {
 
 $sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
 $stmt = mysqli_prepare($koneksi, $sql);
-$a = rand(1, 9);
-$b = rand(1, 9);
-
-// simpan jawabannya di session
-$_SESSION['captcha_result'] = $a + $b;
-
 
 if (!$stmt) {
   $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
