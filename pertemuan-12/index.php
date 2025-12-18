@@ -89,7 +89,7 @@ $_SESSION['captcha_result'] = $a + $b;
         </label>
 
         <label for="txtCaptcha">
-          <span>Captcha (2 + 3 = ?):</span>
+          <span>Captcha (<?= $a ?> + <?= $b ?> = ?):</span>
           <input type="text" id="txtCaptcha" name="txtCaptcha" placeholder="Jawabannya?" required>
         </label>
 

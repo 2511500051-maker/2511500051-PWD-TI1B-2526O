@@ -2,19 +2,41 @@
 session_start();
 require 'koneksi.php';
 require 'fungsi.php';
+if (!isset($_SESSION['captcha_result']) || !isset($_SESSION['captcha_label'])) {
+    $a = rand(1, 9);
+    $b = rand(1, 9);
+    $_SESSION['captcha_result'] = $a + $b;
+    $_SESSION['captcha_label']  = "$a + $b";
+}
 
+/* validasi cid */
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
 ]);
+
 if (!$cid) {
-    $_SESSION['flash_error'] = "Akses tidak valid.";
+    $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('read.php');
+    exit;
 }
-$stmt = mysqli_prepare($koneksi, "SELECT cid, cnama, cemail, cpesan
-                                     FROM tbl_tamu WHERE cid = ? LIMIT 1");
+
+/* flash message */
+$flash_sukses = $_SESSION['flash_sukses'] ?? '';
+$flash_error  = $_SESSION['flash_error'] ?? '';
+$old          = $_SESSION['old'] ?? [];
+
+unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']);
+
+/* ambil data */
+$stmt = mysqli_prepare(
+    $koneksi,
+    "SELECT cid, cnama, cemail, cpesan FROM tbl_tamu WHERE cid = ? LIMIT 1"
+);
+
 if (!$stmt) {
-    $_SESSION['flash_error'] = 'Query tidak benar';
+    $_SESSION['flash_error'] = 'Query tidak benar.';
     redirect_ke('read.php');
+    exit;
 }
 
 mysqli_stmt_bind_param($stmt, 'i', $cid);
@@ -24,22 +46,17 @@ $row = mysqli_fetch_assoc($res);
 mysqli_stmt_close($stmt);
 
 if (!$row) {
-    $_SESSION['flash_error'] = "Record tidak ditemukan.";
+    $_SESSION['flash_error'] = 'Record tidak ditemukan.';
     redirect_ke('read.php');
+    exit;
 }
 
-$nama = $row['cnama'] ?? '';
-$email = $row['cemail'] ?? '';
-$pesan = $row['cpesan'] ?? '';
+/* isi form */
+$nama  = $old['nama']  ?? $row['cnama'];
+$email = $old['email'] ?? $row['cemail'];
+$pesan = $old['pesan'] ?? $row['cpesan'];
 
-$flash_error   = $_SESSION['flash_error'] ?? '';
-$old = $_SESSION['old'] ?? [];
-unset($_SESSION['flash_error'], $_SESSION['old']);
-if (!empty($old)) {
-    $nama = $old['nama'] ?? $nama;
-    $email = $old['email'] ?? $email;
-    $pesan = $old['pesan'] ?? $pesan;
-}
+/* captcha (buat SEKALI) */
 ?>
 
 <!DOCTYPE html>
@@ -73,38 +90,36 @@ if (!empty($old)) {
 
             <?php if (!empty($flash_sukses)) : ?>
                 <div style="padding:10px; margin-bottom:10px; 
-        background: #d4edda; color: #155724; border-radius: 6px;">
+                        background: #d4edda; color: #155724; border-radius: 6px;">
                     <?= $flash_sukses; ?>
                 </div>
             <?php endif; ?>
             <form action="proses_update.php" method="POST">
 
-                <input type="text" name="cid" value="<?= (int)$cid; ?>">
+                <input type="hidden" name="cid" value="<?= (int)$cid; ?>">
 
                 <label for="txtNama"><span>Nama:</span>
-                    <input type="text" id="txtNama" name="txtNamaEd"
+                    <input type="text" id="txtNama" name="txtNama"
                         placeholder="Masukkan nama" required autocomplete="name"
-                        value="<?= !empty('nama') ? $nama : '' ?>">
+                       value="<?= htmlspecialchars($nama) ?>">
                 </label>
 
                 <label for="txtEmail"><span>Email:</span>
                     <input type="email" id="txtEmail" name="txtEmail"
                         placeholder="Masukkan email" required autocomplete="email"
-                        value="<?= !empty('email') ? $email : '' ?>">
+                        value="<?= htmlspecialchars($email) ?>">
                 </label>
 
                 <label for="txtPesan"><span>Pesan Anda:</span>
                     <textarea id="txtPesan" name="txtPesan" rows="4"
                         placeholder="Tulis pesan anda..."
-                        required><?= !empty('pesan') ? $pesan : '' ?></textarea>
+                        required><?= htmlspecialchars($pesan) ?></textarea>
                 </label>
 
                 <label for="txtCaptcha">
-                    <span>Captcha (<?= $a ?> + <?= $b ?> = ?):</span>
-                    <input type="text" id="txtCaptcha" name="txtCaptcha"
-                        placeholder="Jawab pertanyaan..." required>
+                    <span>Captcha (<?= $_SESSION['captcha_label']; ?> = ?):</span>
+                    <input type="text" id="txtCaptcha" name="txtCaptcha" placeholder="Jawabannya?" required>
                 </label>
-
 
                 <button type="submit">Kirim</button>
                 <button type="reset">Batal</button>
@@ -115,4 +130,5 @@ if (!empty($old)) {
 
     <script src="script.js"></script>
 </body>
+
 </html>

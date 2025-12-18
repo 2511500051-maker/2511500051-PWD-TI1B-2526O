@@ -8,6 +8,7 @@ require_once __DIR__ . '/fungsi.php';
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('read.php');
+    exit;
 }
 
 /* validasi cid wajib angka dan > 0 */
@@ -22,9 +23,9 @@ if (!$cid) {
 }
 
 /* ambil dan bersihkan (sanitasi) nilai dari form */
-$nama    = bersihkan($_POST['txtNamaEd']   ?? '');
-$email   = bersihkan($_POST['txtEmailEd']  ?? '');
-$pesan   = bersihkan($_POST['txtPesanEd']  ?? '');
+$nama    = bersihkan($_POST['txtNama']   ?? '');
+$email   = bersihkan($_POST['txtEmail']  ?? '');
+$pesan   = bersihkan($_POST['txtPesan']  ?? '');
 $captcha = bersihkan($_POST['txtCaptcha']  ?? '');
 
 #validasi sederhana
@@ -32,7 +33,7 @@ $errors = []; #ini array untuk menampung semua error yang ada
 
 if ($nama === '') {
     $errors[] = 'Nama wajib diisi.';
-} 
+}
 
 if ($email === '') {
     $errors[] = 'Email wajib diisi.';
@@ -48,7 +49,7 @@ if ($captcha === '') {
     $errors[] = 'Captcha wajib diisi.';
 }
 
-if (mb_strlen($nama)< 3) {
+if (mb_strlen($nama) < 3) {
     $errors[] = 'Nama minimal 3 karakter.';
 }
 
@@ -56,8 +57,8 @@ if (mb_strlen($pesan) < 10) {
     $errors[] = 'Pesan minimal 10 karakter.';
 }
 
-if ($captcha !=="6") {
-    $errors[] = 'Jawaban' . $captcha . 'captcha salah.';
+if (!isset($_SESSION['captcha_result']) || (int)$captcha !== (int)$_SESSION['captcha_result']) {
+    $errors[] = 'Jawaban captcha salah.';
 }
 
 /* jika ada error */
@@ -69,7 +70,8 @@ if (!empty($errors)) {
     ];
 
     $_SESSION['flash_error'] = implode('<br>', $errors);
-    redirect_ke('edit.php?cid='. (int)$cid);
+    redirect_ke('edit.php?cid=' . (int)$cid);
+    exit;
 }
 /* siapkan statement */
 $stmt = mysqli_prepare($koneksi, "UPDATE tbl_tamu
@@ -80,20 +82,28 @@ if (!$stmt) {
     // jika gagal prepare
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
     redirect_ke('edit.php?cid=' . (int)$cid);
+    exit;
 }
 
 /* bind parameter (s = string, i = integer) */
-mysqli_stmt_bind_param($stmt,"sssi",$nama,$email,$pesan,$cid);
+mysqli_stmt_bind_param($stmt, "sssi", $nama, $email, $pesan, $cid);
 
 /* eksekusi */
 if (mysqli_stmt_execute($stmt)) {
 
-    // jika berhasil
-    unset($_SESSION['old']);
+    if (mysqli_stmt_execute($stmt)) {
 
-    $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
-    // pola PRG (Post → Redirect → Get)
-    redirect_ke('read.php');
+        // HAPUS CAPTCHA SETELAH BERHASIL
+        unset($_SESSION['captcha_result'], $_SESSION['captcha_label']);
+
+        // bersihkan data lama
+        unset($_SESSION['old']);
+
+        $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
+
+        redirect_ke('read.php');
+        exit;
+    }
 } else {
     // jika gagal, simpan kembali data lama
     $_SESSION['old'] = [
@@ -102,10 +112,11 @@ if (mysqli_stmt_execute($stmt)) {
         'pesan' => $pesan
     ];
 
-    $_SESSION['flash_error'] ='Data gagal diperbaharui. Silakan coba lagi.';
+    $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
     redirect_ke('edit.php?cid=' . (int)$cid);
+    exit;
 }
 
 mysqli_stmt_close($stmt);
 redirect_ke('edit.php?cid=' . (int)$cid);
-?>
+exit;
