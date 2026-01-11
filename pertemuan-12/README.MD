@@ -10,4 +10,5 @@ Hari ini, Kamis 18 Des 2025 saya belajar:<br>
 <li>mengubah nomor aksi ke edit</li>
 <li>salin copy code proses_update.php</li>
 <li>memgganti proses update menjadi delete</li>
+<li>menambahkan parameter cid untuk link delete di read.php</li>
 </ol>
