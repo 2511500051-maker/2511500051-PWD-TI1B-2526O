@@ -11,4 +11,5 @@ Hari ini, Kamis 18 Des 2025 saya belajar:<br>
 <li>salin copy code proses_update.php</li>
 <li>memgganti proses update menjadi delete</li>
 <li>menambahkan parameter cid untuk link delete di read.php</li>
+<li>memperbaiki file proses_delete.php agar menggunakan parameter cid</li>
 </ol>
