@@ -6,4 +6,5 @@ Nim:2511500051<br>
 <ol>
     <li>improt sql ke file pertemuan-15</li>
     <li>membuat table mahasiswa</li>
+    <li>mengembangkan table</li>
 </ol>
