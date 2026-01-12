@@ -38,8 +38,8 @@
     Ambil data lama dari DB menggunakan prepared statement, 
     jika ada kesalahan, tampilkan penanda error.
   */
-  $stmt = mysqli_prepare($conn, "SELECT cid, cnama, cemail, cpesan 
-                                    FROM tbl_tamu WHERE cid = ? LIMIT 1");
+  $stmt = mysqli_prepare($conn, "SELECT cid, cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik 
+                                    FROM tbl_mahasiswa WHERE cid = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error'] = 'Query tidak benar.';
     redirect_ke('read.php');
@@ -57,18 +57,33 @@
   }
 
   #Nilai awal (prefill form)
-  $nama  = $row['cnama'] ?? '';
-  $email = $row['cemail'] ?? '';
-  $pesan = $row['cpesan'] ?? '';
+  $nim  = $row['cnim'] ?? '';
+  $nama_lengkap = $row['cnama_lengkap'] ?? '';
+  $tempat_lahir = $row['ctempat_lahir'] ?? '';
+  $tanggal_lahir = $row['ctanggal_lahir'] ?? '';
+  $hobi = $row['chobi'] ?? '';
+  $pasangan = $row['cpasangan'] ?? '';
+  $pekerjaan = $row['cpekerjaan'] ?? '';
+  $nama_orang_tua = $row['cnama_orang_tua'] ?? '';
+  $nama_kakak = $row['cnama_kakak'] ?? '';
+  $nama_adik = $row['cnama_adik'] ?? '';
 
   #Ambil error dan nilai old input kalau ada
   $flash_error = $_SESSION['flash_error'] ?? '';
   $old = $_SESSION['old'] ?? [];
+  
   unset($_SESSION['flash_error'], $_SESSION['old']);
   if (!empty($old)) {
-    $nama  = $old['nama'] ?? $nama;
-    $email = $old['email'] ?? $email;
-    $pesan = $old['pesan'] ?? $pesan;
+  $nim  = $row['cnim'] ?? '';
+  $nama_lengkap = $row['cnama_lengkap'] ?? '';
+  $tempat_lahir = $row['ctempat_lahir'] ?? '';
+  $tanggal_lahir = $row['ctanggal_lahir'] ?? '';
+  $hobi = $row['chobi'] ?? '';
+  $pasangan = $row['cpasangan'] ?? '';
+  $pekerjaan = $row['cpekerjaan'] ?? '';
+  $nama_orang_tua = $row['cnama_orang_tua'] ?? '';
+  $nama_kakak = $row['cnama_kakak'] ?? '';
+  $nama_adik = $row['cnama_adik'] ?? '';
   }
 ?>
 
