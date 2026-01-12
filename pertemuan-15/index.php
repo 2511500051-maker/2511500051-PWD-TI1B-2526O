@@ -55,9 +55,9 @@ require_once __DIR__ . '/fungsi.php';
         </label>
 
         <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+          <input type="date" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
         </label>
-
+ 
         <label for="txtHobi"><span>Hobi:</span>
           <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
         </label>
@@ -165,7 +165,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Yang menghubungi kami</h2>
-      <?php include 'read_inc.php'; ?>
+      <?php include 'read_inc_kontak.php'; ?>
     </section>
   </main>
 

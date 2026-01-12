@@ -10,16 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 #ambil dan bersihkan nilai dari form
-$nim  = bersihkan($_POST['txtNim']  ?? '');
-$nama_lengkap = bersihkan($_POST['txtNamaLengkap'] ?? '');
-$tempat_lahir = bersihkan($_POST['txtTempatLahir'] ?? '');
-$tanggal_lahir = bersihkan($_POST['txtTanggalLahir'] ?? '');
-$hobi = bersihkan($_POST['txtHobi'] ?? '');
-$pasangan = bersihkan($_POST['txtPasangan'] ?? '');
-$pekerjaan = bersihkan($_POST['txtPekerjaan'] ?? '');
-$nama_orang_tua = bersihkan($_POST['txtNamaOrangTua'] ?? '');
-$nama_kakak = bersihkan($_POST['txtNamaKakak'] ?? '');
-$nama_adik = bersihkan($_POST['txtNamaAdik'] ?? '');
+$nim           = bersihkan($_POST['txtNim']      ?? '');
+$nama_lengkap  = bersihkan($_POST['txtNmLengkap'] ?? '');
+$tempat_lahir  = bersihkan($_POST['txtT4Lhr']    ?? '');
+$tanggal_lahir = bersihkan($_POST['txtTglLhr']   ?? '');
+$hobi          = bersihkan($_POST['txtHobi']     ?? '');
+$pasangan      = bersihkan($_POST['txtPasangan'] ?? '');
+$pekerjaan     = bersihkan($_POST['txtKerja']    ?? '');
+$nama_orang_tua = bersihkan($_POST['txtNmOrtu']   ?? '');
+$nama_kakak    = bersihkan($_POST['txtNmKakak']  ?? '');
+$nama_adik     = bersihkan($_POST['txtNmAdik']   ?? '');
+
 
 #Validasi sederhana
 $errors = []; #ini array untuk menampung semua error yang ada
@@ -86,7 +87,8 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_mahasiswa (cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik) VALUES (?, ?, ?, ?, ?, ?, ?, ? ?, ?)";
+$sql = "INSERT INTO tbl_mahasiswa (cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik)
+ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {

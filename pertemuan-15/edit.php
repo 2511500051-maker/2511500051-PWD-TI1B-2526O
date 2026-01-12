@@ -114,7 +114,7 @@ if (!empty($old)) {
 
   <main>
     <section id="biodata">
-          <h2>Biodata Sederhana Mahasiswa</h2>
+      <h2>Edit Biodata Mahasiswa</h2>
       <?php if (!empty($flash_error)): ?>
         <div style="padding:10px; margin-bottom:10px; 
             background:#f8d7da; color:#721c24; border-radius:6px;">
@@ -123,50 +123,42 @@ if (!empty($old)) {
       <?php endif; ?>
       <form action="proses_update.php" method="POST">
 
-            <label for="txtNim"><span>NIM:</span>
-              <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
-            </label>
+        <input type="text" id="txtNim" name="txtNim"
+          value="<?= htmlspecialchars($nim, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-              <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
-            </label>
+        <input type="text" id="txtNmLengkap" name="txtNmLengkap"
+          value="<?= htmlspecialchars($nama_lengkap, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-              <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
-            </label>
+        <input type="text" id="txtT4Lhr" name="txtT4Lhr"
+          value="<?= htmlspecialchars($tempat_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-              <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
-            </label>
+        <input type="date" id="txtTglLhr" name="txtTglLhr"
+          value="<?= htmlspecialchars($tanggal_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtHobi"><span>Hobi:</span>
-              <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
-            </label>
+        <input type="text" id="txtHobi" name="txtHobi"
+          value="<?= htmlspecialchars($hobi, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtPasangan"><span>Pasangan:</span>
-              <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
-            </label>
+        <input type="text" id="txtPasangan" name="txtPasangan"
+          value="<?= htmlspecialchars($pasangan, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtKerja"><span>Pekerjaan:</span>
-              <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
-            </label>
+        <input type="text" id="txtKerja" name="txtKerja"
+          value="<?= htmlspecialchars($pekerjaan, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-              <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
-            </label>
+        <input type="text" id="txtNmOrtu" name="txtNmOrtu"
+          value="<?= htmlspecialchars($nama_orang_tua, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtNmKakak"><span>Nama Kakak:</span>
-              <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
-            </label>
+        <input type="text" id="txtNmKakak" name="txtNmKakak"
+          value="<?= htmlspecialchars($nama_kakak, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <label for="txtNmAdik"><span>Nama Adik:</span>
-              <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
-            </label>
+        <input type="text" id="txtNmAdik" name="txtNmAdik"
+          value="<?= htmlspecialchars($nama_adik, ENT_QUOTES, 'UTF-8'); ?>" required>
 
-            <button type="submit">Kirim</button>
-            <button type="reset">Batal</button>
-          </form>
-        </section>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+        <a href="read.php" class="reset">Kembali</a>
+      </form>
+    </section>
   </main>
 
   <script src="script.js"></script>
