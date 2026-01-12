@@ -3,7 +3,7 @@
   require 'koneksi.php';
   require 'fungsi.php';
 
-  $sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
+  $sql = "SELECT * FROM tbl_mahasiswa ORDER BY cid DESC";
   $q = mysqli_query($conn, $sql);
   if (!$q) {
     die("Query error: " . mysqli_error($conn));
@@ -49,23 +49,38 @@
   </tr>
   <?php $i = 1; ?>
   <?php while ($row = mysqli_fetch_assoc($q)): ?>
+    <?php
+    // siapkan nilai aman string (hindari undefined key & null)
+    $cid            = $row['cid']            ?? 0;
+    $namaLengkap    = $row['cnamalengkap']   ?? '';
+    $tempatLahir    = $row['ctempatlahir']   ?? '';
+    $tglLahir       = $row['ctanggallahir']  ?? '';
+    $hobi           = $row['chobi']          ?? '';
+    $pasangan       = $row['cpasangan']      ?? '';
+    $pekerjaan      = $row['cpekerjaan']     ?? '';
+    $namaOrtu       = $row['cnamaorangtua']  ?? '';
+    $namaKakak      = $row['cnamakakak']     ?? '';
+    $namaAdik       = $row['cnamaadik']      ?? '';
+    $createdAt      = $row['dcreated_at']    ?? '';
+    ?>
     <tr>
-      <td><?= $i++ ?></td>
-      <td>
-        <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnamalengkap']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
-      </td>
-      <td><?= $row['cid']; ?></td>
-      <td><?= htmlspecialchars($row['cnamalengkap']); ?></td>
-      <td><?= htmlspecialchars($row['ctempatlahir']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['ctanggallahir'])); ?></td>
-      <td><?= htmlspecialchars($row['chobi']); ?></td>
-      <td><?= htmlspecialchars($row['cpasangan']); ?></td>
-      <td><?= htmlspecialchars($row['cpekerjaan']); ?></td>
-      <td><?= htmlspecialchars($row['cnamaorangtua']); ?></td>
-      <td><?= htmlspecialchars($row['cnamakakak']); ?></td>
-      <td><?= htmlspecialchars($row['cnamaadik']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
+        <td><?= $i++ ?></td>
+        <td>
+            <a href="edit.php?cid=<?= (int)$cid; ?>">Edit</a>
+            <a onclick="return confirm('Hapus <?= htmlspecialchars($namaLengkap, ENT_QUOTES, 'UTF-8'); ?>?')"
+               href="proses_delete.php?cid=<?= (int)$cid; ?>">Delete</a>
+        </td>
+        <td><?= (int)$cid; ?></td>
+        <td><?= htmlspecialchars($namaLengkap, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($tempatLahir, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars(formatTanggal($tglLahir), ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($hobi, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($pasangan, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($pekerjaan, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($namaOrtu, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($namaKakak, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars($namaAdik, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?= htmlspecialchars(formatTanggal($createdAt), ENT_QUOTES, 'UTF-8'); ?></td>
     </tr>
-  <?php endwhile; ?>
+<?php endwhile; ?>
 </table>
