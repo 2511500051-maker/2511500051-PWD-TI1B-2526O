@@ -87,6 +87,10 @@ header li a:active {
   text-align: justify;
 }
 
+#tabel-kontak {
+    margin-top: 30px;
+}
+
 #about p,
 #contact p,
 #contact label,
