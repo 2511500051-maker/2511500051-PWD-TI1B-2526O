@@ -5,7 +5,7 @@ require_once __DIR__ . '/fungsi.php';
 
 #cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-  $_SESSION['flash_error'] = 'Akses tidak valid.';
+  $_SESSION['flash_error_biodata'] = 'Akses tidak valid.';
   redirect_ke('read.php');
 }
 
@@ -15,7 +15,7 @@ $cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT, [
 ]);
 
 if (!$cid) {
-  $_SESSION['flash_error'] = 'CID Tidak Valid.';
+  $_SESSION['flash_error_biodata'] = 'CID Tidak Valid.';
   redirect_ke('edit.php?cid=' . (int)$cid);
 }
 
@@ -93,7 +93,7 @@ if (!empty($errors)) {
     'nama_adik' => $nama_adik
   ];
 
-  $_SESSION['flash_error'] = implode('<br>', $errors);
+  $_SESSION['flash_error_biodata'] = implode('<br>', $errors);
   redirect_ke('edit.php?cid=' . (int)$cid);
 }
 
@@ -107,7 +107,7 @@ $stmt = mysqli_prepare($conn, "UPDATE tbl_mahasiswa
                                 WHERE cid = ?");
 if (!$stmt) {
   #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
-  $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
+  $_SESSION['flash_error_biodata'] = 'Terjadi kesalahan sistem (prepare gagal).';
   redirect_ke('edit.php?cid=' . (int)$cid);
 }
 
@@ -120,7 +120,7 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
   /*
       Redirect balik ke read.php dan tampilkan info sukses.
     */
-  $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
+  $_SESSION['flash_sukses_biodata'] = 'Terima kasih, data Anda sudah diperbaharui.';
   redirect_ke('read.php'); #pola PRG: kembali ke data dan exit()
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
@@ -135,7 +135,7 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     'nama_kakak' => $nama_kakak,
     'nama_adik' => $nama_adik
   ];
-  $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
+  $_SESSION['flash_error_biodata'] = 'Data gagal diperbaharui. Silakan coba lagi.';
   redirect_ke('edit.php?cid=' . (int)$cid);
 }
 #tutup statement
