@@ -35,10 +35,16 @@
   <tr>
     <th>No</th>
     <th>Aksi</th>
-    <th>ID</th>
-    <th>Nama</th>
-    <th>Email</th>
-    <th>Pesan</th>
+    <th>Nim</th>
+    <th>Nama Lengkap</th>
+    <th>Tempat Lahir</th>
+    <th>Tanggal Lahir</th>
+    <th>Hobi</th>
+    <th>Pasangan</th>
+    <th>Pekerjaan</th>
+    <th>Nama Orang Tua</th>
+    <th>Nama Kakak</th>
+    <th>Nama Adik</th>
     <th>Created At</th>
   </tr>
   <?php $i = 1; ?>
@@ -47,12 +53,18 @@
       <td><?= $i++ ?></td>
       <td>
         <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Apakah Anda yakin ingin menghapus nama ini <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnamalengkap']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
       </td>
       <td><?= $row['cid']; ?></td>
-      <td><?= htmlspecialchars($row['cnama']); ?></td>
-      <td><?= htmlspecialchars($row['cemail']); ?></td>
-      <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>
+      <td><?= htmlspecialchars($row['cnamalengkap']); ?></td>
+      <td><?= htmlspecialchars($row['ctempatlahir']); ?></td>
+      <td><?= formatTanggal(htmlspecialchars($row['ctanggallahir'])); ?></td>
+      <td><?= htmlspecialchars($row['chobi']); ?></td>
+      <td><?= htmlspecialchars($row['cpasangan']); ?></td>
+      <td><?= htmlspecialchars($row['cpekerjaan']); ?></td>
+      <td><?= htmlspecialchars($row['cnamaorangtua']); ?></td>
+      <td><?= htmlspecialchars($row['cnamakakak']); ?></td>
+      <td><?= htmlspecialchars($row['cnamaadik']); ?></td>
       <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
     </tr>
   <?php endwhile; ?>
