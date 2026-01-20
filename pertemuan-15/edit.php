@@ -122,37 +122,57 @@ if (!empty($old)) {
         </div>
       <?php endif; ?>
       <form action="proses_update.php" method="POST">
+        <input type="hidden" name="cid" value="<?= (int)$cid; ?>">
 
-        <input type="text" id="txtNim" name="txtNim"
-          value="<?= htmlspecialchars($nim, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim"
+            value="<?= htmlspecialchars($nim, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtNmLengkap" name="txtNmLengkap"
-          value="<?= htmlspecialchars($nama_lengkap, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap"
+            value="<?= htmlspecialchars($nama_lengkap, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtT4Lhr" name="txtT4Lhr"
-          value="<?= htmlspecialchars($tempat_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr"
+            value="<?= htmlspecialchars($tempat_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="date" id="txtTglLhr" name="txtTglLhr"
-          value="<?= htmlspecialchars($tanggal_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="date" id="txtTglLhr" name="txtTglLhr"
+            value="<?= htmlspecialchars($tanggal_lahir, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtHobi" name="txtHobi"
-          value="<?= htmlspecialchars($hobi, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi"
+            value="<?= htmlspecialchars($hobi, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtPasangan" name="txtPasangan"
-          value="<?= htmlspecialchars($pasangan, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan"
+            value="<?= htmlspecialchars($pasangan, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtKerja" name="txtKerja"
-          value="<?= htmlspecialchars($pekerjaan, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja"
+            value="<?= htmlspecialchars($pekerjaan, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtNmOrtu" name="txtNmOrtu"
-          value="<?= htmlspecialchars($nama_orang_tua, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu"
+            value="<?= htmlspecialchars($nama_orang_tua, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtNmKakak" name="txtNmKakak"
-          value="<?= htmlspecialchars($nama_kakak, ENT_QUOTES, 'UTF-8'); ?>" required>
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak"
+            value="<?= htmlspecialchars($nama_kakak, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
-        <input type="text" id="txtNmAdik" name="txtNmAdik"
-          value="<?= htmlspecialchars($nama_adik, ENT_QUOTES, 'UTF-8'); ?>" required>
-
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik"
+            value="<?= htmlspecialchars($nama_adik, ENT_QUOTES, 'UTF-8'); ?>" required>
+        </label>
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>

@@ -103,6 +103,12 @@ header li a:active {
   border-bottom: 1px solid #e6e6e6;
 }
 
+#biodata label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
 #about strong,
 #contact strong,
 #contact label>span,
