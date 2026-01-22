@@ -5,4 +5,5 @@ Nama: CINTIA DIVANTI AGUSTIN <br>
 Nim : 2511500051 <br>
 <ol>
     <li>mengekstak file dari elearning pertemuan-16 ke vscode</li>
+    <li>membuat database dan table penggunjung</li>
 </ol>
