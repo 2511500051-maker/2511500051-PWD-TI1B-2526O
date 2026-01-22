@@ -61,9 +61,9 @@
 <br><br>
 
 <?php
-$sql = "SELECT * FROM tbl_mahasiswa ORDER BY cid DESC";
-$q = mysqli_query($conn, $sql);
-if (!$q) {
+$sql = "SELECT * FROM tbl_pengunjung ORDER BY cid DESC";
+$q_pengunjung = mysqli_query($conn, $sql);
+if (!$q_pengunjung) {
   die("Query error: " . mysqli_error($conn));
 }
 ?>
@@ -108,7 +108,8 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error']);
   <?php while ($row = mysqli_fetch_assoc($q)): ?>
     <?php
     $cid               = $row['cid']             ?? 0;
-    $kode_penggunjung  = $row['ckode_penggunjung'] ?? '';
+    $kode_pengunjung   = $row['ckode_pengunjung'] ?? '';
+    $nama_pengunjung   = $row['cnama_pengunjung']   ?? '';
     $alamat_rumah      = $row['calamat_rumah']   ?? '';
     $tanggal_kunjungan = $row['ctanggal_kunjungan']  ?? '';
     $hobi              = $row['chobi']           ?? '';
@@ -123,11 +124,12 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error']);
       <td><?= $i++ ?></td>
       <td>
         <a href="edit.php?cid=<?= (int)$cid; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($kode_penggunjung, ENT_QUOTES, 'UTF-8'); ?>?')"
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($nama_pengunjung, ENT_QUOTES, 'UTF-8'); ?>?')"
            href="proses_delete.php?cid=<?= (int)$cid; ?>">Delete</a>
       </td>
       <td><?= (int)$cid; ?></td>
-      <td><?= htmlspecialchars($kode_penggunjung, ENT_QUOTES, 'UTF-8'); ?></td>
+      <td><?= htmlspecialchars($kode_pengunjung, ENT_QUOTES, 'UTF-8'); ?></td>
+      <td><?= htmlspecialchars($nama_pengunjung, ENT_QUOTES, 'UTF-8'); ?></td>
       <td><?= htmlspecialchars($alamat_rumah, ENT_QUOTES, 'UTF-8'); ?></td>
       <td><?= htmlspecialchars(formatTanggal($tanggal_kunjungan), ENT_QUOTES, 'UTF-8'); ?></td>
       <td><?= htmlspecialchars($hobi, ENT_QUOTES, 'UTF-8'); ?></td>
